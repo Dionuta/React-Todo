@@ -1,19 +1,19 @@
 import React from "react";
+import './Todo.css';
 
 
-
-const TodoForm = (props)=>{
+const TodoForm = ({handleTodoChange, value, handleAddTodo, handleRemoveTodo})=>{ //destructuring
         return(
             <form>
                 <input 
-                onChange={props.handleTodoChange}
+                onChange={handleTodoChange}
                 type="text"
                 name="todo"
-                value={props.value}
+                value={value}
                 placeholder="...todo"
                 />
-                <button onClick={props.handleAddTodo} type="submit">Add Todo</button>
-                <button onClick={props.handleRemoveTodo} type="submit">Clear Completed</button>
+                <button  className='bouncy' onClick={handleAddTodo} type="submit">Add Todo</button>
+                <button  className='bouncy' onClick={handleRemoveTodo} type="submit">Clear Completed</button>
             </form>
         )
     }
